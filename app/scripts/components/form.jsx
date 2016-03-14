@@ -12,7 +12,7 @@ var ImageList = React.createClass({
    handleOnClick:function(e){
      e.preventDefault();
      var addNew = {URL:$("#URL").val(),Caption:$("#Caption").val()}
-   //this.props.collection.create(addNew);
+   this.props.collection.create(addNew);
 
    },
    render:function(){
@@ -41,11 +41,11 @@ var ImageList = React.createClass({
  var ImageItem = React.createClass({
  handleDelete:function(e){
  var curID = e.currentTarget.id;
-this.props.collection.findWhere({Caption: curTitle}).destroy()
+
 
  },
  handleUpdate:function(e){
- this.setState({isEditing:true})
+
 console.log("update works")
  },
  render:function(){

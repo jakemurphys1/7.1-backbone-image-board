@@ -14,7 +14,7 @@ var ImageList = React.createClass({displayName: "ImageList",
    handleOnClick:function(e){
      e.preventDefault();
      var addNew = {URL:$("#URL").val(),Caption:$("#Caption").val()}
-   //this.props.collection.create(addNew);
+   this.props.collection.create(addNew);
 
    },
    render:function(){
@@ -43,11 +43,11 @@ var ImageList = React.createClass({displayName: "ImageList",
  var ImageItem = React.createClass({displayName: "ImageItem",
  handleDelete:function(e){
  var curID = e.currentTarget.id;
-this.props.collection.findWhere({Caption: curTitle}).destroy()
+
 
  },
  handleUpdate:function(e){
- this.setState({isEditing:true})
+
 console.log("update works")
  },
  render:function(){
@@ -69,23 +69,23 @@ var $ = require("jquery")
 
 
 
-var ListItem = React.createClass({displayName: "ListItem",
-   mixins:[Backbone.React.Component.mixin],
-   handleOnClick:function(e){
-     e.preventDefault();
-   },
-   render:function(){
-     return(
-     React.createElement("div", null, 
-     React.createElement("img", {src: {URL}}), 
-     React.createElement("span", null, {Caption})
-     )
-     )
-   },
-
- });
-
-module.exports=ListItem;
+// var ListItem = React.createClass({
+//    mixins:[Backbone.React.Component.mixin],
+//    handleOnClick:function(e){
+//      e.preventDefault();
+//    },
+//    render:function(){
+//      return(
+//      <div>
+//      <img src = />
+//      <span></span>
+//      </div>
+//      )
+//    },
+//
+//  });
+// 
+// module.exports=ListItem;
 
 },{"backbone":14,"jquery":63,"react":203,"react-dom":73}],3:[function(require,module,exports){
 "use strict";
