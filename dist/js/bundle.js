@@ -15,7 +15,6 @@ var ImageList = React.createClass({displayName: "ImageList",
      e.preventDefault();
      var addNew = {URL:$("#URL").val(),Caption:$("#Caption").val()}
    this.props.collection.create(addNew);
-
    },
    render:function(){
 
@@ -43,7 +42,7 @@ var ImageList = React.createClass({displayName: "ImageList",
  var ImageItem = React.createClass({displayName: "ImageItem",
  handleDelete:function(e){
  var curID = e.currentTarget.id;
-
+ this.props.model.destroy()
 
  },
  handleUpdate:function(e){
